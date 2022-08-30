@@ -11,7 +11,7 @@ class Ninja {
     }
 
     showStats(){
-        console.log(`My name is ${this.name}, I have a health of ${this.health}. My speed is ${this.speed}, and my strength is ${this.strength}.`)
+        console.log(`My name is ${this.name}, I have a health of ${this.health}. My speed is ${this.speed}, and my strength is ${this.strength}.`);
     }
 
     drinkSake(){
@@ -28,11 +28,18 @@ n1.showStats();
 class Sensei extends Ninja{
     constructor(name, wisdom= 10){
         super(name, 200, 10, 10, wisdom)
+        this.wisdom = wisdom;
     }
 
     speakWisdom(){
         this.drinkSake();
         console.log("Man who stands on toilet is hight on pot");
+    }
+
+    showStats(){
+        super.showStats()
+        console.log(`I have the wisdom of ${this.wisdom} dragons`);
+
     }
 }
 
@@ -40,5 +47,6 @@ const sen1 = new Sensei("David Lo Pan");
 
 console.log(sen1.sayName());
 sen1.speakWisdom();
-sen1.showStats();
+sen1.showStats()
+console.log(sen1.name);
 
